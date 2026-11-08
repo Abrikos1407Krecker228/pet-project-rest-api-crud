@@ -819,6 +819,745 @@
           "response": []
         }
       ]
+    },
+    {
+      "name": "Негативные проверки",
+      "item": [
+        {
+          "name": "CreateToken - некорректный Content-Type",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "connection": true,
+              "accept-encoding": true,
+              "accept": true,
+              "content-length": true,
+              "content-type": true,
+              "host": true,
+              "user-agent": true
+            }
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/auth",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "auth"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateToken -  отсутствующий Content-Type",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "connection": true,
+              "accept-encoding": true,
+              "accept": true,
+              "content-length": true,
+              "content-type": true,
+              "host": true,
+              "user-agent": true
+            }
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/auth",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "auth"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateToken - пустое тело",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "connection": true,
+              "accept-encoding": true,
+              "accept": true,
+              "content-length": true,
+              "content-type": true,
+              "host": true,
+              "user-agent": true
+            }
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/auth",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "auth"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateToken - невалидное тело",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "connection": true,
+              "accept-encoding": true,
+              "accept": true,
+              "content-length": true,
+              "content-type": true,
+              "host": true,
+              "user-agent": true
+            }
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\" : \"admin\",\n    \"password\" : true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/auth",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "auth"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateToken - некорректный пароль",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "connection": true,
+              "accept-encoding": true,
+              "accept": true,
+              "content-length": true,
+              "content-type": true,
+              "host": true,
+              "user-agent": true
+            }
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"qwerty123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/auth",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "auth"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateBooking (JSON) - пустое тело",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "connection": true,
+              "accept": true,
+              "host": true,
+              "content-length": true,
+              "content-type": true,
+              "user-agent": true,
+              "accept-encoding": true
+            }
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/booking",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateBooking (XML) - пустое тело",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "connection": true,
+              "accept": true,
+              "host": true,
+              "content-length": true,
+              "content-type": true,
+              "user-agent": true,
+              "accept-encoding": true
+            }
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<booking>\n  \n  </booking>",
+              "options": {
+                "raw": {
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/booking",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateBooking (JSON) - невалидный формат даты Copy",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "connection": true,
+              "accept": true,
+              "host": true,
+              "content-length": true,
+              "content-type": true,
+              "user-agent": true,
+              "accept-encoding": true
+            }
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstname\" : \"Anatoliks\",\n    \"lastname\" : \"Bebra\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"\",\n        \"checkout\" : 1855000000000\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/booking",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateBooking (JSON) - дублирующийся ключ",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "connection": true,
+              "accept": true,
+              "host": true,
+              "content-length": true,
+              "content-type": true,
+              "user-agent": true,
+              "accept-encoding": true
+            }
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstname\" : \"Anatoliks\",\n    \"lastname\" : \"Bebra\",\n    \"lastname\" : \"Mickle\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"1999-02-02\",\n        \"checkout\" : \"2026-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/booking",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateBooking (JSON) - невалидное поле totalprice",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "connection": true,
+              "accept": true,
+              "host": true,
+              "content-length": true,
+              "content-type": true,
+              "user-agent": true,
+              "accept-encoding": true
+            }
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstname\" : \"Anatoliks\",\n    \"lastname\" : \"Bebra\",\n    \"totalprice\" : \"111\",\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"1999-02-02\",\n        \"checkout\" : \"2026-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/booking",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CreateBooking (JSON) - невалидный ключ в теле",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "connection": true,
+              "accept": true,
+              "host": true,
+              "content-length": true,
+              "content-type": true,
+              "user-agent": true,
+              "accept-encoding": true
+            }
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstname\" : \"Anatoliks\",\n    \"lastMyname\" : \"Bebra\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"1999-02-02\",\n        \"checkout\" : \"2026-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/booking",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetBookingIds - некорректный ключ в query",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "connection": true,
+              "accept-encoding": true,
+              "accept": true,
+              "user-agent": true,
+              "host": true
+            }
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/booking?Myname=Anatoliks",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "booking"
+              ],
+              "query": [
+                {
+                  "key": "Myname",
+                  "value": "Anatoliks"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetBooking (JSON) - несуществующий id",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "connection": true,
+              "accept-encoding": true,
+              "host": true,
+              "user-agent": true,
+              "accept": true
+            }
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/booking/123123",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "booking",
+                "123123"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UpdateBooking (JSON) Cookie 403",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "connection": true,
+              "accept-encoding": true,
+              "accept": true,
+              "user-agent": true,
+              "host": true,
+              "content-length": true,
+              "content-type": true
+            }
+          },
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Cookie",
+                "value": "token=381588129f15133"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstname\" : \"Anatoliks\",\n    \"lastname\" : \"Bebra\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"1999-01-01\",\n        \"checkout\" : \"2026-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/booking/4743",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "booking",
+                "4743"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UpdateBooking (JSON) пустой Cookie",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "connection": true,
+              "accept-encoding": true,
+              "accept": true,
+              "user-agent": true,
+              "host": true,
+              "content-length": true,
+              "content-type": true
+            }
+          },
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Cookie",
+                "value": "token="
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstname\" : \"Anatoliks\",\n    \"lastname\" : \"Bebra\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"1999-01-01\",\n        \"checkout\" : \"2026-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/booking/5153",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "booking",
+                "5153"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DeleteBooking Authorization 403",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "host": true,
+              "user-agent": true,
+              "accept": true,
+              "connection": true,
+              "accept-encoding": true
+            }
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": ""
+              }
+            ],
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/booking/226",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "booking",
+                "226"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
     }
   ],
   "variable": [
